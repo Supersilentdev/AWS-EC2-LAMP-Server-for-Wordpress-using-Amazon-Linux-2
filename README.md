@@ -1,6 +1,6 @@
-# AWS-EC2-LAMP-Server-for-Wordpress-using-Amazon-Linux-2
-Installing LAMP (Amazon Linux 2, Apache. MySql and PHP) on Ec2 Machine to Deploy Wordpress App.
-For Ubuntu Linux LAMP Server <a href="https://github.com/Supersilentdev/AWS-EC2-LAMP-Server-for-Wordpress-using-Ubuntu">click hear</a>.
+# AWS-EC2-LAMP-Server-for-ss-using-Amazon-Linux-2
+Installing LAMP (Amazon Linux 2, Apache. MySql and PHP) on Ec2 Machine to Deploy ss App.
+For Ubuntu Linux LAMP Server <a href="https://github.com/Supersilentdev/AWS-EC2-LAMP-Server-for-ss-using-Ubuntu">click hear</a>.
 
 **Sign Up or Log In to AWS**
 
@@ -51,12 +51,12 @@ For Ubuntu Linux LAMP Server <a href="https://github.com/Supersilentdev/AWS-EC2-
     sudo amazon-linux-extras install php7.2 -y
     sudo yum install php-curl php-gd php-mbstring php-xml php-xmlrpc php-soap php-intl php-zip -y
     sudo systemctl start httpd mariadb
-    sudo wget https://wordpress.org/latest.tar.gz
+    sudo wget https://ss.org/latest.tar.gz
     sudo tar -xzvf latest.tar.gz
     sudo rm latest.tar.gz
-    sudo mv wordpress /var/www/
-    sudo chown -R apache /var/www/wordpress
-    sudo chmod -R 775 /var/www/wordpress
+    sudo mv ss /var/www/
+    sudo chown -R apache /var/www/ss
+    sudo chmod -R 775 /var/www/ss
     sudo systemctl enable httpd mariadb
     ```
 - Launch the Instance.
@@ -78,7 +78,7 @@ For Ubuntu Linux LAMP Server <a href="https://github.com/Supersilentdev/AWS-EC2-
      ssh -i KEYXXX.pem ec2-user@3-XXX-XX-235
      ```
 
-**Creating a Database for WordPress**
+**Creating a Database for ss**
 
    - Create an SQL User and Set Password**
 
@@ -89,16 +89,16 @@ For Ubuntu Linux LAMP Server <a href="https://github.com/Supersilentdev/AWS-EC2-
    - Replace 'wpuser' and 'wppassword' with a secure username and password in the command:
 
      ```sql
-     CREATE DATABASE wordpress;
+     CREATE DATABASE ss;
      CREATE USER 'wpuser'@'localhost' IDENTIFIED BY 'wppassword';
      GRANT ALL PRIVILEGES ON * . * TO 'wpuser'@'localhost';
      FLUSH PRIVILEGES;
      exit;
      ```
 
-**Making Wordprees default**
+**Making ss default**
 
-   - Update the httpd configuration file to set WordPress as the default DocumentRoot:
+   - Update the httpd configuration file to set ss as the default DocumentRoot:
 
      ```bash
      sudo nano /etc/httpd/conf/httpd.conf
@@ -113,7 +113,7 @@ For Ubuntu Linux LAMP Server <a href="https://github.com/Supersilentdev/AWS-EC2-
      to:
 
      ```
-     DocumentRoot /var/www/wordpress/
+     DocumentRoot /var/www/ss/
      ```
 
    - Restart httpd:
@@ -122,9 +122,9 @@ For Ubuntu Linux LAMP Server <a href="https://github.com/Supersilentdev/AWS-EC2-
      sudo systemctl restart httpd
      ```
 
-Done, Now Access Your Wordpress Installation & Set it up using Server Public IP Address.(Example: http://3-XXX-XX-235 use http not https)
+Done, Now Access Your ss Installation & Set it up using Server Public IP Address.(Example: http://3-XXX-XX-235 use http not https)
 
-**Installing SSL Certificate for WordPress**
+**Installing SSL Certificate for ss**
 
 1. **Adding Your Website's DNS Name to the Configuration File**
 
@@ -139,7 +139,7 @@ Done, Now Access Your Wordpress Installation & Set it up using Server Public IP 
      ```
       <VirtualHost *:80>
       ServerName myxxxxxx.com
-      DocumentRoot /var/www/wordprees
+      DocumentRoot /var/www/wordpress
       </VirtualHost>
      ```
    - Restart httpd:
@@ -166,4 +166,4 @@ Done, Now Access Your Wordpress Installation & Set it up using Server Public IP 
 
    - Follow the prompts and provide your email.
 
-Congratulations! Your WordPress website is now set up securely with SSL/TLS encryption. Enjoy your website.
+Congratulations! Your ss website is now set up securely with SSL/TLS encryption. Enjoy your website.
