@@ -113,7 +113,7 @@ For Ubuntu Linux LAMP Server <a href="https://github.com/Supersilentdev/AWS-EC2-
      to:
 
      ```
-     DocumentRoot /var/www/ss/
+     DocumentRoot /var/www/wordpress/
      ```
 
    - Restart httpd:
