@@ -89,7 +89,7 @@ For Ubuntu Linux LAMP Server <a href="https://github.com/Supersilentdev/AWS-EC2-
    - Replace 'wpuser' and 'wppassword' with a secure username and password in the command:
 
      ```sql
-     CREATE DATABASE ss;
+     CREATE DATABASE wordpress;
      CREATE USER 'wpuser'@'localhost' IDENTIFIED BY 'wppassword';
      GRANT ALL PRIVILEGES ON * . * TO 'wpuser'@'localhost';
      FLUSH PRIVILEGES;
